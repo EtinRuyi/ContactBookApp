@@ -22,4 +22,11 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ContactBookApp.Commons\ContactBookApp.Commons.csproj" />
+    <ProjectReference Include="..\ContactBookApp.Core\ContactBookApp.Core.csproj" />
+    <ProjectReference Include="..\ContactBookApp.Data\ContactBookApp.Data.csproj" />
+    <ProjectReference Include="..\ContactBookApp.Model\ContactBookApp.Model.csproj" />
+  </ItemGroup>
+
 </Project>
