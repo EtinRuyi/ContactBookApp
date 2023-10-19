@@ -14,6 +14,6 @@ namespace ContactBookApp.Core.Services.Abstractions
     {
         Task<BaseResponse<RegisterResponceViewModel>> RegisterAsync(RegisterViewModel model, string roleName, ModelStateDictionary modelState);
         Task<BaseResponse<LoginResponceViewModel>> Login(LoginRequestViewModel model);
-        Task<SignInManager> CheckPasswordSignAsync(User user, string password, bool lockoutOnFailure);
+        Task<SignInResult> CheckPasswordSignAsync(User user, string password, bool lockoutOnFailure);
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ContactBookApp.Model.ViewModels
 {
-    internal class RegisterResponceViewModel
+    public class RegisterResponceViewModel
     {
+        public string Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string UserName { get; set; }
     }
 }
