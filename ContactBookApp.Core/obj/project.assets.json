@@ -2325,6 +2325,46 @@
           }
         }
       },
+      "ContactBookApp.Commons/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CloudinaryDotNet": "1.22.0",
+          "ContactBookApp.Model": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.12",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.Identity.Core": "7.0.12"
+        },
+        "compile": {
+          "bin/placeholder/ContactBookApp.Commons.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ContactBookApp.Commons.dll": {}
+        }
+      },
+      "ContactBookApp.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "CloudinaryDotNet": "1.22.0",
+          "ContactBookApp.Model": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.12",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore": "7.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.12",
+          "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Microsoft.Extensions.Identity.Core": "7.0.12"
+        },
+        "compile": {
+          "bin/placeholder/ContactBookApp.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ContactBookApp.Data.dll": {}
+        }
+      },
       "ContactBookApp.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -6524,6 +6564,16 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "ContactBookApp.Commons/1.0.0": {
+      "type": "project",
+      "path": "../ContactBookApp.Commons/ContactBookApp.Commons.csproj",
+      "msbuildProject": "../ContactBookApp.Commons/ContactBookApp.Commons.csproj"
+    },
+    "ContactBookApp.Data/1.0.0": {
+      "type": "project",
+      "path": "../ContactBookApp.Data/ContactBookApp.Data.csproj",
+      "msbuildProject": "../ContactBookApp.Data/ContactBookApp.Data.csproj"
+    },
     "ContactBookApp.Model/1.0.0": {
       "type": "project",
       "path": "../ContactBookApp.Model/ContactBookApp.Model.csproj",
@@ -6533,6 +6583,8 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "CloudinaryDotNet >= 1.22.0",
+      "ContactBookApp.Commons >= 1.0.0",
+      "ContactBookApp.Data >= 1.0.0",
       "ContactBookApp.Model >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.12",
       "Microsoft.AspNetCore.Identity >= 2.2.0",
@@ -6577,6 +6629,12 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Commons\\ContactBookApp.Commons.csproj": {
+              "projectPath": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Commons\\ContactBookApp.Commons.csproj"
+            },
+            "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Data\\ContactBookApp.Data.csproj": {
+              "projectPath": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Data\\ContactBookApp.Data.csproj"
+            },
             "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Model\\ContactBookApp.Model.csproj": {
               "projectPath": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Model\\ContactBookApp.Model.csproj"
             }

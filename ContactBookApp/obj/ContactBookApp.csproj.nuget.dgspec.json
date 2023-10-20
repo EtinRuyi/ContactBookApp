@@ -133,6 +133,12 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Commons\\ContactBookApp.Commons.csproj": {
+                "projectPath": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Commons\\ContactBookApp.Commons.csproj"
+              },
+              "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Data\\ContactBookApp.Data.csproj": {
+                "projectPath": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Data\\ContactBookApp.Data.csproj"
+              },
               "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Model\\ContactBookApp.Model.csproj": {
                 "projectPath": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.Model\\ContactBookApp.Model.csproj"
               }

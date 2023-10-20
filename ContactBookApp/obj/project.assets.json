@@ -2456,6 +2456,8 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CloudinaryDotNet": "1.22.0",
+          "ContactBookApp.Commons": "1.0.0",
+          "ContactBookApp.Data": "1.0.0",
           "ContactBookApp.Model": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.12",
           "Microsoft.AspNetCore.Identity": "2.2.0",

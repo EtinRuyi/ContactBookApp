@@ -55,7 +55,7 @@ namespace ContactBookApp.Commons.Validations
             return IdentityResult.Success;
         }
 
-        public async Task<IdentityResult> ValidateUserAsyn(User user)
+        public async Task<IdentityResult> ValidateUserAsync(User user)
         {
             var userValidator = new UserValidator<User>();
             var validationResult = await userValidator.ValidateAsync(_userManager, user);
