@@ -25,7 +25,7 @@ namespace ContactBookApp.Model.ViewModels
             };
         }
 
-        public BaseResponse<T> Fialed(string message, int statusCode)
+        public BaseResponse<T> Failed(string message, int statusCode)
         {
             return new BaseResponse<T>
             {
@@ -34,7 +34,7 @@ namespace ContactBookApp.Model.ViewModels
             };
         }
 
-        public BaseResponse<T> Fialed(string message)
+        public BaseResponse<T> Failed(string message)
         {
             return new BaseResponse<T>
             {

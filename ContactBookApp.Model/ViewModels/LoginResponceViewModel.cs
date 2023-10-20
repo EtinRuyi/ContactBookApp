@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ContactBookApp.Model.ViewModels
 {
-    public class LoginResponceViewModel
+    public class LoginResponceViewModel : RegisterResponceViewModel
     {
         public string Token { get; set;}
     }

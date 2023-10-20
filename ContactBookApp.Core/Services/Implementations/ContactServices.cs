@@ -2,6 +2,7 @@
 using ContactBookApp.Data;
 using ContactBookApp.Model.Entity;
 using ContactBookApp.Model.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -70,9 +71,24 @@ namespace ContactBookApp.Core.Services.Implementations
             return new OkObjectResult(new { Message = "Contact deleted successfully" });
         }
 
-        public Task<BaseResponse<ContactResponseModel>> FindContactByIdAsync(string id)
+        public async Task<BaseResponse<ContactResponseModel>> FindContactByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            var response =  new BaseResponse<ContactResponseModel>();
+            var user = await _dbcontext.Contacts.FindAsync(id);
+            if (user == null)
+            {
+                return response.Fialed("User not found", StatusCodes.Status404NotFound);
+            }
+            var status = new ContactResponseModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Address = user.Address,
+                PhoneNumber = user.PhoneNumber,
+            };
+            return response.Success("Success", StatusCodes.Status200OK, status);
         }
     }
 }
