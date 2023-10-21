@@ -7,11 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactBookApp.Core.Services.Implementations
 {
@@ -75,11 +70,11 @@ namespace ContactBookApp.Core.Services.Implementations
             var user = new User
             {
                 UserName = model.Email,
-                Email = model.Email
+                Email = model.Email,
             };
 
             var uniqueUser = await _userValidator.ValidateUserAsync(user, model.Password);
-            var uniquePassword = await _userValidator.ValidateUserAsync(user,model.Password);
+            var uniquePassword = await _userValidator.ValidateUserPasswordAsync(user,model.Password);
             var response = new BaseResponse<RegisterResponceViewModel>();
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!uniqueUser.Succeeded)
@@ -90,7 +85,7 @@ namespace ContactBookApp.Core.Services.Implementations
             if (!uniquePassword.Succeeded)
             {
                 var errors = uniqueUser.Errors.Select(e => e.Description).ToList();
-                return response.Failed("{Failed : PasswordRequiement not met}", StatusCodes.Status400BadRequest);
+                return response.Failed("{Failed : Password Requirement not met}", StatusCodes.Status400BadRequest);
             }
 
             if (result.Succeeded)

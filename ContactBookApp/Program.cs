@@ -36,8 +36,8 @@ namespace ContactBookApp
             //Configure Swagger to use JWTokens
             builder.Services.AddSwaggerGen(config =>
             {
-                config.SwaggerDoc("V1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Authorization", Version = "v1" });
-                config.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme 
+                config.SwaggerDoc("v1", new OpenApiInfo { Title = "Authorization", Version = "v1" });
+                config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
                 {
                     In = ParameterLocation.Header,
                     Description = "Insert Token",
@@ -87,7 +87,7 @@ namespace ContactBookApp
             builder.Services.AddSingleton(cloudinary);
 
             //Configure JWTOKENS Authentication Options
-            var jwtsetting = builder.Configuration.GetSection("JwtSetting");
+            var jwtsetting = builder.Configuration.GetSection("Jwtsettings");
             var key = Encoding.ASCII.GetBytes(jwtsetting["secret"]);
             builder.Services.AddAuthentication(options =>
             {
@@ -103,7 +103,7 @@ namespace ContactBookApp
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key),
                         ValidateIssuer = false,
-                        ValidateAudience = true,
+                        ValidateAudience = false,
                     };
                 });
 
@@ -116,7 +116,7 @@ namespace ContactBookApp
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1.json", "My API");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API");
                 });
             }
 

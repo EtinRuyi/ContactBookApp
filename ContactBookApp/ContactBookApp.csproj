@@ -29,9 +29,4 @@
     <ProjectReference Include="..\ContactBookApp.Model\ContactBookApp.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\ImageUpload\" />
-    <Folder Include="Controllers\Authentications\" />
-  </ItemGroup>
-
 </Project>

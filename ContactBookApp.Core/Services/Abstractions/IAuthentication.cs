@@ -2,11 +2,6 @@
 using ContactBookApp.Model.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactBookApp.Core.Services.Abstractions
 {

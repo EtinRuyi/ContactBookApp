@@ -6,11 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactBookApp.Core.Services.Implementations
 {
@@ -31,7 +26,7 @@ namespace ContactBookApp.Core.Services.Implementations
                 return new BadRequestObjectResult(new { Message = "Id cannot be empty" });
             }
 
-            var idExists = await _userManager.FindByEmailAsync(id);
+            var idExists = await _userManager.FindByIdAsync(id);
             if (idExists == null)
             {
                 return new BadRequestObjectResult(new { Message = "Invalid Id" });
@@ -77,7 +72,7 @@ namespace ContactBookApp.Core.Services.Implementations
             var user = await _dbcontext.Contacts.FindAsync(id);
             if (user == null)
             {
-                return response.Fialed("User not found", StatusCodes.Status404NotFound);
+                return response.Failed("User not found", StatusCodes.Status404NotFound);
             }
             var status = new ContactResponseModel
             {

@@ -22,7 +22,7 @@ namespace ContactBookApp.Commons.Security
         public static string GenerateJwToken(User user, string role, IConfiguration configuration) 
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Secrete"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Secret"]));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var claims = new List<Claim>
             {

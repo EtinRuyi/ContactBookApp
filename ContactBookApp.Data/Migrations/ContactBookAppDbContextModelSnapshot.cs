@@ -28,29 +28,24 @@ namespace ContactBookApp.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDepreciated")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAp")
@@ -87,15 +82,12 @@ namespace ContactBookApp.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -173,14 +165,14 @@ namespace ContactBookApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e171089b-3428-46ad-9ee0-1558e82d80bb",
+                            Id = "c9c2651e-9ea5-4dee-b330-ddfbfe40fce5",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "6d708a24-97ac-4f96-9af8-6bb86969ae4e",
+                            Id = "7440164c-d480-4af1-8f71-85c857657cf1",
                             ConcurrencyStamp = "2",
                             Name = "Regular",
                             NormalizedName = "Regular"

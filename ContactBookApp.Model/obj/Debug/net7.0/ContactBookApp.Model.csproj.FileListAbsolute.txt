@@ -3,3 +3,12 @@ C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\Cont
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ContactBookApp.Model.AssemblyInfoInputs.cache
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ContactBookApp.Model.AssemblyInfo.cs
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ContactBookApp.Model.csproj.CoreCompileInputs.cache
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\bin\Debug\net7.0\ContactBookApp.Model.deps.json
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\bin\Debug\net7.0\ContactBookApp.Model.runtimeconfig.json
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\bin\Debug\net7.0\ContactBookApp.Model.dll
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\bin\Debug\net7.0\ContactBookApp.Model.pdb
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ContactBookApp.Model.dll
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\refint\ContactBookApp.Model.dll
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ContactBookApp.Model.pdb
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ContactBookApp.Model.genruntimeconfig.cache
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Model\obj\Debug\net7.0\ref\ContactBookApp.Model.dll

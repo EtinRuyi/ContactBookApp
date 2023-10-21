@@ -30,6 +30,6 @@ namespace ContactBookApp.Model.ViewModels
         [Required]
         [Compare(nameof(PhoneNumber))]
         [DataType(DataType.PhoneNumber)]
-        public string PhoneNumberConfirmed { get; set; };
+        public string PhoneNumberConfirmed { get; set; }
     }
 }

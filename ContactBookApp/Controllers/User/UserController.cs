@@ -16,7 +16,7 @@ namespace ContactBookApp.Controllers.User
             _userServices = userServices;
         }
 
-        [HttpGet("Add-new-user")]
+        [HttpPost("Add-new-user")]
         public async Task<IActionResult> AddNewUser([FromBody] PostNewUserViewModel model)
         {
             return await _userServices.CreateUserAsync(model);
@@ -28,15 +28,15 @@ namespace ContactBookApp.Controllers.User
         {
             return await _userServices.DeleteUserAsync(id);
         }
-
+        [AllowAnonymous]
         [HttpGet("Get/{id}")]
         public async Task<IActionResult> GetUserById (string id)
         {
             return await _userServices.FindUserByIdAsync(id);
         }
 
-        [Authorize(Roles = "Regular")]
-        [HttpPut("Udate/{id}")]
+        [Authorize]
+        [HttpPut("Update/{id}")]
         public async Task<IActionResult> UdateUserById(string id, [FromBody] PutViewModel model)
         {
             var user = await _userServices.FindUserByIdAsync (id);
