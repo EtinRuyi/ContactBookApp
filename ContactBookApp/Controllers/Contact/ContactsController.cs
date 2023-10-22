@@ -1,7 +1,5 @@
 ﻿using ContactBookApp.Core.Services.Abstractions;
 using ContactBookApp.Model.ViewModels;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactBookApp.Controllers.Contact
@@ -16,7 +14,7 @@ namespace ContactBookApp.Controllers.Contact
             _contactServices = contactServices;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("Add-Contact")]
         public async Task<IActionResult> AddContact([FromBody] ContactViewModel model, string userId)
         {

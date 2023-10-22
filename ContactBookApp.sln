@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookApp", "ContactBookApp\ContactBookApp.csproj", "{AED6EB4D-F5F0-464C-B481-CA7DDE5EA0DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookApp", "ContactBookApp\ContactBookApp.csproj", "{AED6EB4D-F5F0-464C-B481-CA7DDE5EA0DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookApp.Commons", "ContactBookApp.Commons\ContactBookApp.Commons.csproj", "{5608747E-2D7B-477A-A869-D315F671708C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookApp.Commons", "ContactBookApp.Commons\ContactBookApp.Commons.csproj", "{5608747E-2D7B-477A-A869-D315F671708C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookApp.Core", "ContactBookApp.Core\ContactBookApp.Core.csproj", "{861C9908-4ADF-4FF2-9537-07AAE04E35EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookApp.Core", "ContactBookApp.Core\ContactBookApp.Core.csproj", "{861C9908-4ADF-4FF2-9537-07AAE04E35EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookApp.Data", "ContactBookApp.Data\ContactBookApp.Data.csproj", "{E703341F-07BB-4982-85B4-0202786C3C7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookApp.Data", "ContactBookApp.Data\ContactBookApp.Data.csproj", "{E703341F-07BB-4982-85B4-0202786C3C7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBookApp.Model", "ContactBookApp.Model\ContactBookApp.Model.csproj", "{A71709CA-9D28-4444-9196-29E63F4DFBF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBookApp.Model", "ContactBookApp.Model\ContactBookApp.Model.csproj", "{A71709CA-9D28-4444-9196-29E63F4DFBF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook", "ContactBook\ContactBook.csproj", "{EDE33E80-DC71-4B7D-91F6-6585081CEC0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A71709CA-9D28-4444-9196-29E63F4DFBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A71709CA-9D28-4444-9196-29E63F4DFBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A71709CA-9D28-4444-9196-29E63F4DFBF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE33E80-DC71-4B7D-91F6-6585081CEC0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE33E80-DC71-4B7D-91F6-6585081CEC0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE33E80-DC71-4B7D-91F6-6585081CEC0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE33E80-DC71-4B7D-91F6-6585081CEC0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

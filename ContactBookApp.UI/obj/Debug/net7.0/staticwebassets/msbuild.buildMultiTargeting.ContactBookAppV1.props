@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ContactBookAppV1.props" />
+</Project>

@@ -5,11 +5,6 @@ using ContactBookApp.Model.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactBookApp.Core.Services.Implementations
 {
@@ -27,7 +22,9 @@ namespace ContactBookApp.Core.Services.Implementations
         {
             var user = new User 
             { 
-                UserName = model.UserName, 
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                UserName = model.Email, 
                 Email = model.Email,
                 PhoneNumber = model.PhoneNumber,
             };
@@ -75,7 +72,7 @@ namespace ContactBookApp.Core.Services.Implementations
             {
                 return new NotFoundObjectResult( new { Message = "User not found"});
             }
-            return new OkObjectResult(new { Message = "Successful" });
+            return new OkObjectResult(user);
         }
 
         public async Task<IActionResult> GetAllUserAsync(int page, int pageSize)
@@ -101,20 +98,43 @@ namespace ContactBookApp.Core.Services.Implementations
             return new OkObjectResult(paginatedResult);
         }
 
-        public async Task<List<User>> SearchUserAsync(string searchTerm)
+        //public async Task<List<User>> SearchUserAsync(string searchTerm)
+        //{
+        //    try
+        //    {
+        //        var result = await _userManager.Users
+        //               .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm)
+        //               || u.PhoneNumber.Contains(searchTerm)).ToListAsync();
+
+        //        return result;
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw new ApplicationException(ex.Message);
+        //    }
+        //}
+
+        public async Task<IActionResult> SearchUserAsync(string searchTerm)
         {
             try
             {
                 var result = await _userManager.Users
-                       .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm)
-                       || u.PhoneNumber.Contains(searchTerm)).ToListAsync();
+                    .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm)
+                    || u.PhoneNumber.Contains(searchTerm)).ToListAsync();
 
-                return result;
+                if (result.Count == 0)
+                {
+                    // No users found, return a "User not found" message
+                    return new NotFoundObjectResult(new { Message = "User not found" });
+                }
+
+                return new OkObjectResult(result);
             }
             catch (Exception ex)
             {
-
-                throw new ApplicationException(ex.Message);
+                // Handle the exception or return an error response
+                return new BadRequestObjectResult(new { Message = "An error occurred while searching for users" });
             }
         }
 
@@ -125,8 +145,8 @@ namespace ContactBookApp.Core.Services.Implementations
             {
                 return new NotFoundObjectResult(new { Message = "User not fount" });
             }
-            user.Email = model.Email;
-            user.UserName = model.UserName;
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
             user.PhoneNumber = model.PhoneNumber;
 
             var validationResult = await _userValidator.ValidateUserAsync(user);

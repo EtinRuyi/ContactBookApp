@@ -1,7 +1,5 @@
 ﻿using ContactBookApp.Core.Services.Abstractions;
 using ContactBookApp.Model.ViewModels;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactBookApp.Controllers.User
@@ -22,20 +20,20 @@ namespace ContactBookApp.Controllers.User
             return await _userServices.CreateUserAsync(model);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeleteUser(string id)
         {
             return await _userServices.DeleteUserAsync(id);
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet("Get/{id}")]
         public async Task<IActionResult> GetUserById (string id)
         {
             return await _userServices.FindUserByIdAsync(id);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> UdateUserById(string id, [FromBody] PutViewModel model)
         {
@@ -47,14 +45,14 @@ namespace ContactBookApp.Controllers.User
             return await _userServices.UpdateUserAsync(id, model);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("Get-All-Users")]
         public async Task<IActionResult> GetAllUser(int page = 1, int pageSize = 10)
         {
             return await _userServices.GetAllUserAsync(page, pageSize);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("Search-User")]
         public async Task<IActionResult> SearchUsers (string searchTearm)
         {

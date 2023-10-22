@@ -69,8 +69,11 @@ namespace ContactBookApp.Core.Services.Implementations
         {
             var user = new User
             {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
                 UserName = model.Email,
                 Email = model.Email,
+                PhoneNumber = model.PhoneNumber,
             };
 
             var uniqueUser = await _userValidator.ValidateUserAsync(user, model.Password);

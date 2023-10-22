@@ -37,6 +37,7 @@ namespace ContactBookApp.Core.Services.Implementations
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Emial,
+                PhoneNumber = model.PhoneNmuber, 
                 Address = model.Address,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAp = DateTime.UtcNow,
@@ -76,12 +77,12 @@ namespace ContactBookApp.Core.Services.Implementations
             }
             var status = new ContactResponseModel
             {
-                Id = user.Id,
+                //Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
-                Address = user.Address,
                 PhoneNumber = user.PhoneNumber,
+                Address = user.Address,
             };
             return response.Success("Success", StatusCodes.Status200OK, status);
         }

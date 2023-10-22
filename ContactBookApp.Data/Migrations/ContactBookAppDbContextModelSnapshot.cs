@@ -165,14 +165,14 @@ namespace ContactBookApp.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c9c2651e-9ea5-4dee-b330-ddfbfe40fce5",
+                            Id = "44d70b48-566b-4eb7-87bf-256613948cda",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "7440164c-d480-4af1-8f71-85c857657cf1",
+                            Id = "27a8a7b2-0883-4ed9-b76d-db2c380e00f2",
                             ConcurrencyStamp = "2",
                             Name = "Regular",
                             NormalizedName = "Regular"

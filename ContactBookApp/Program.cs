@@ -36,7 +36,7 @@ namespace ContactBookApp
             //Configure Swagger to use JWTokens
             builder.Services.AddSwaggerGen(config =>
             {
-                config.SwaggerDoc("v1", new OpenApiInfo { Title = "Authorization", Version = "v1" });
+                config.SwaggerDoc("v1", new OpenApiInfo { Title = "ContactBook App", Version = "v1" });
                 config.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme 
                 {
                     In = ParameterLocation.Header,
@@ -116,7 +116,7 @@ namespace ContactBookApp
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CB-V1");
                 });
             }
 

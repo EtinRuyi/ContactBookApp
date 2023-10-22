@@ -19,7 +19,7 @@ namespace ContactBookApp.ImageUpload
             _userManager = userManager;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPatch("Upload-Image/{id}")]
         public async Task<IActionResult> UploadUserImage(string id, IFormFile image)
         {
