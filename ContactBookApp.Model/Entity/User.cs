@@ -8,6 +8,5 @@ namespace ContactBookApp.Model.Entity
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public ICollection<Contact> Contacts { get; set; }
-        //public int ContactCount { get; set; }
     }
 }

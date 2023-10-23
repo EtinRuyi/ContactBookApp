@@ -77,7 +77,7 @@ namespace ContactBookApp.Core.Services.Implementations
             }
             var status = new ContactResponseModel
             {
-                //Id = user.Id,
+                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,

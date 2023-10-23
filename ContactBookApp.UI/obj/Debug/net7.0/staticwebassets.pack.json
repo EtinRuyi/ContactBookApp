@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ContactBookAppV1.bundle.scp.css",
-      "PackagePath": "staticwebassets\\ContactBookAppV1.bundle.scp.css"
+      "Id": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\ContactBookApp.UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ContactBookApp.UI.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\wwwroot\\css\\site.css",
@@ -245,20 +245,20 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ContactBookAppV1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ContactBookApp.UI.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ContactBookAppV1.props",
-      "PackagePath": "build\\ContactBookAppV1.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ContactBookApp.UI.props",
+      "PackagePath": "build\\ContactBookApp.UI.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ContactBookAppV1.props",
-      "PackagePath": "buildMultiTargeting\\ContactBookAppV1.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ContactBookApp.UI.props",
+      "PackagePath": "buildMultiTargeting\\ContactBookApp.UI.props"
     },
     {
-      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ContactBookAppV1.props",
-      "PackagePath": "buildTransitive\\ContactBookAppV1.props"
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ContactBookApp.UI.props",
+      "PackagePath": "buildTransitive\\ContactBookApp.UI.props"
     }
   ],
   "ElementsToRemove": []

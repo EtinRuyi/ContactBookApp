@@ -76,6 +76,7 @@ C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\bin\Debug\net7.0\ContactBoo
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\bin\Debug\net7.0\ContactBookApp.Core.pdb
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\bin\Debug\net7.0\ContactBookApp.Data.pdb
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\bin\Debug\net7.0\ContactBookApp.Model.pdb
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\ContactBookApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\staticwebassets\msbuild.ContactBookApp.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\staticwebassets\msbuild.build.ContactBookApp.props
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.ContactBookApp.props
@@ -90,4 +91,3 @@ C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\refint\Con
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\ContactBookApp.pdb
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\ContactBookApp.genruntimeconfig.cache
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\ref\ContactBookApp.dll
-C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp\obj\Debug\net7.0\ContactBookApp.MvcApplicationPartsAssemblyInfo.cs

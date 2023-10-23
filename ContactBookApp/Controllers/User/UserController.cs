@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ContactBookApp.Controllers.User
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -15,7 +15,7 @@ namespace ContactBookApp.Controllers.User
         }
 
         [HttpPost("Add-new-user")]
-        public async Task<IActionResult> AddNewUser([FromBody] PostNewUserViewModel model)
+        public async Task<IActionResult> AddNewUser([FromBody] CreateNewUserViewModel model)
         {
             return await _userServices.CreateUserAsync(model);
         }
@@ -30,12 +30,12 @@ namespace ContactBookApp.Controllers.User
         [HttpGet("Get/{id}")]
         public async Task<IActionResult> GetUserById (string id)
         {
-            return await _userServices.FindUserByIdAsync(id);
+            return Ok(await _userServices.FindUserByIdAsync(id));
         }
 
         //[Authorize]
         [HttpPut("Update/{id}")]
-        public async Task<IActionResult> UdateUserById(string id, [FromBody] PutViewModel model)
+        public async Task<IActionResult> UpdateUserById(string id, [FromBody] UpdateViewModel model)
         {
             var user = await _userServices.FindUserByIdAsync (id);
             if (user == null)
@@ -49,7 +49,7 @@ namespace ContactBookApp.Controllers.User
         [HttpGet("Get-All-Users")]
         public async Task<IActionResult> GetAllUser(int page = 1, int pageSize = 10)
         {
-            return await _userServices.GetAllUserAsync(page, pageSize);
+            return Ok(await _userServices.GetAllUserAsync(page, pageSize));
         }
 
         //[Authorize(Roles = "Admin")]

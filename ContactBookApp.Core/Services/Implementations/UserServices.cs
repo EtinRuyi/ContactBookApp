@@ -1,4 +1,5 @@
-﻿using ContactBookApp.Commons.Validations;
+﻿using Azure;
+using ContactBookApp.Commons.Validations;
 using ContactBookApp.Core.Services.Abstractions;
 using ContactBookApp.Model.Entity;
 using ContactBookApp.Model.ViewModels;
@@ -18,7 +19,7 @@ namespace ContactBookApp.Core.Services.Implementations
             _userValidator = userValidator;
         }
 
-        public async Task<IActionResult> CreateUserAsync(PostNewUserViewModel model)
+        public async Task<IActionResult> CreateUserAsync(CreateNewUserViewModel model)
         {
             var user = new User 
             { 
@@ -65,17 +66,27 @@ namespace ContactBookApp.Core.Services.Implementations
             return new OkObjectResult(new {Message = "User deleted successfully" });
         }
 
-        public async Task<IActionResult> FindUserByIdAsync(string id)
+        public async Task<UserResponseModel> FindUserByIdAsync(string id)
         {
+            var response = new BaseResponse<UserResponseModel>();
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
-                return new NotFoundObjectResult( new { Message = "User not found"});
+                return null;
             }
-            return new OkObjectResult(user);
+            var result = new UserResponseModel
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                ImageUrl = user.ImageUrl,
+            };
+            return result;
         }
 
-        public async Task<IActionResult> GetAllUserAsync(int page, int pageSize)
+        public async Task<List<UserResponseModel>> GetAllUserAsync(int page, int pageSize)
         {
             var allUsers = await _userManager.Users.CountAsync();
             var totalPages = (int)Math.Ceiling(allUsers / (double)pageSize);
@@ -87,58 +98,85 @@ namespace ContactBookApp.Core.Services.Implementations
                 .Take(pageSize)
                 .ToListAsync();
 
-            var paginatedResult = new PaginatedUserViewModel
+            var userList = new List<UserResponseModel>();
+            foreach (var user in users)
             {
-                TotalUsers = users.Count,
-                CurentPage = page,
-                PadeSize = pageSize,
-                Users = users,
-            };
+                var userResponseModel = new UserResponseModel()
+                {
+                    Id = user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    PhoneNumber = user.PhoneNumber,
+                    Email = user.Email,
+                    ImageUrl = user.ImageUrl,
+                };
+                userList.Add(userResponseModel);
+            }
+            return userList;
 
-            return new OkObjectResult(paginatedResult);
+            //var paginatedResult = new PaginatedUserViewModel
+            //{
+            //    TotalUsers = users.Count,
+            //    CurentPage = page,
+            //    PadeSize = pageSize,
+            //    Users = users,
+            //};
+
+            //return new OkObjectResult(paginatedResult);
         }
 
-        //public async Task<List<User>> SearchUserAsync(string searchTerm)
+        public async Task<List<UserResponseModel>> SearchUserAsync(string searchTerm)
+        {
+            try
+            {
+                var users = await _userManager.Users
+                    .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm) || u.PhoneNumber.Contains(searchTerm))
+                    .ToListAsync();
+
+                // Map the user data to UserResponseModel
+                var userResponseList = users.Select(user => new UserResponseModel
+                {
+                    Id = user.Id,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber,
+                    ImageUrl = user.ImageUrl,
+                }).ToList();
+
+                return userResponseList;
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException(ex.Message);
+            }
+        }
+
+
+        //public async Task<IActionResult> SearchUserAsync(string searchTerm)
         //{
         //    try
         //    {
         //        var result = await _userManager.Users
-        //               .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm)
-        //               || u.PhoneNumber.Contains(searchTerm)).ToListAsync();
+        //            .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm)
+        //            || u.PhoneNumber.Contains(searchTerm)).ToListAsync();
 
-        //        return result;
+        //        if (result.Count == 0)
+        //        {
+        //            // No users found, return a "User not found" message
+        //            return new NotFoundObjectResult(new { Message = "User not found" });
+        //        }
+
+        //        return new OkObjectResult(result);
         //    }
         //    catch (Exception ex)
         //    {
-
-        //        throw new ApplicationException(ex.Message);
+        //        // Handle the exception or return an error response
+        //        return new BadRequestObjectResult(new { Message = "An error occurred while searching for users" });
         //    }
         //}
 
-        public async Task<IActionResult> SearchUserAsync(string searchTerm)
-        {
-            try
-            {
-                var result = await _userManager.Users
-                    .Where(u => u.UserName.Contains(searchTerm) || u.Email.Contains(searchTerm) || u.Id.Contains(searchTerm)
-                    || u.PhoneNumber.Contains(searchTerm)).ToListAsync();
-
-                if (result.Count == 0)
-                {
-                    // No users found, return a "User not found" message
-                    return new NotFoundObjectResult(new { Message = "User not found" });
-                }
-
-                return new OkObjectResult(result);
-            }
-            catch (Exception ex)
-            {
-                // Handle the exception or return an error response
-                return new BadRequestObjectResult(new { Message = "An error occurred while searching for users" });
-            }
-        }
-
-        public async Task<IActionResult> UpdateUserAsync(string id, PutViewModel model)
+        public async Task<IActionResult> UpdateUserAsync(string id, UpdateViewModel model)
         {
             var user = await _userManager.FindByIdAsync(id);
             if (user == null)

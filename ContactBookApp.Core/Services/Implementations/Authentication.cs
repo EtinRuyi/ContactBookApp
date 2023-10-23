@@ -57,10 +57,12 @@ namespace ContactBookApp.Core.Services.Implementations
             var result = new LoginResponceViewModel
             {
                 Token = token,
-                UserName = user.UserName,
                 Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                ImageUrl = user.ImageUrl,
             };
             return response.Success("logged in successfully", StatusCodes.Status200OK, result);
         }
@@ -77,7 +79,7 @@ namespace ContactBookApp.Core.Services.Implementations
             };
 
             var uniqueUser = await _userValidator.ValidateUserAsync(user, model.Password);
-            var uniquePassword = await _userValidator.ValidateUserPasswordAsync(user,model.Password);
+            var uniquePassword = await _userValidator.ValidateUserPasswordAsync(user, model.Password);
             var response = new BaseResponse<RegisterResponceViewModel>();
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!uniqueUser.Succeeded)
@@ -108,9 +110,14 @@ namespace ContactBookApp.Core.Services.Implementations
             }
             var status = new RegisterResponceViewModel
             {
-                UserName = user.UserName,
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                ImageUrl = user.ImageUrl,
             };
-            return response.Success($"{status.UserName} created sucessfully", StatusCodes.Status200OK);
+            return response.Success($"{status.FirstName} created sucessfully", StatusCodes.Status200OK);
         }
     }
 }
