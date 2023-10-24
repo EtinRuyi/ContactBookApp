@@ -13,10 +13,10 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>
+                @* <th>
                     @Html.DisplayNameFor(model => model.Id)
-                </th>
-                <th>
+                </th> *@
+                <th> 
                     @Html.DisplayNameFor(model => model.FirstName)
                 </th>
                 <th>
@@ -38,9 +38,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    @* <td>
                         @Html.DisplayFor(modelItem => item.Id)
-                    </td>
+                    </td> *@
                     <td>
                         @Html.DisplayFor(modelItem => item.FirstName)
                     </td>
@@ -59,8 +59,9 @@
                         </a>
 
                     </td>
-                    <td>
+                    <td class="mt-3 d-flex justify-content-between">
                         <a asp-controller="User" asp-action="UpdateUserById" asp-route-id="@item.Id" class="btn btn-light">Edit</a>
+                        <a asp-controller="User" asp-action="DeleteUser" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
 
                        @*  @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                         @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
