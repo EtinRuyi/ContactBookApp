@@ -78,7 +78,7 @@ namespace ContactBookApp.UI.Controllers.User
             return View(null);
         }
 
-        [HttpPost]
+        //[HttpPost]
         //public async Task<IActionResult> UpdateUserById(Guid id, UpdateUserDto update)
         //{
         //    try
@@ -149,12 +149,138 @@ namespace ContactBookApp.UI.Controllers.User
             }
         }
 
-        [HttpPost]
+        //CHAT GBT
+        [HttpGet]
         public async Task<IActionResult> DeleteUser(Guid id)
         {
+            var client = _httpClientFactory.CreateClient();
+            var response = await client.GetFromJsonAsync<GetUserDto>($"https://localhost:7083/api/User/GetUserById/Get/{id}");
 
-            return View();
+            if (response != null)
+            {
+                return View(response);
+            }
+
+            return View(null);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            try
+            {
+                var client = _httpClientFactory.CreateClient();
+                var response = await client.DeleteAsync($"https://localhost:7083/api/User/DeleteUser/Delete/{id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("GetAllUser", "User");
+                }
+                else if (response.StatusCode == HttpStatusCode.Forbidden)
+                {
+                    ViewBag.Error = "Incorrect User Password";
+                }
+                else
+                {
+                    ViewBag.Error = "An error occurred while deleting the user.";
+                }
+
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = "An error occurred: " + ex.Message;
+                return View();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        //[HttpGet]
+        //public async Task<IActionResult> DeleteUser(Guid id)
+        //{
+        //    var client = _httpClientFactory.CreateClient();
+        //    var response = await client.GetFromJsonAsync<UpdateUserDto>($"https://localhost:7083/api/User/GetUserById/Get/{id}?ID={id.ToString()}");
+        //    if (response != null)
+        //    {
+        //        return View(response);
+        //    }
+        //    return View(null);
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> DeleteUser(Guid id, GetUserDto delete)
+        //{
+        //    try
+        //    {
+        //        var client = _httpClientFactory.CreateClient();
+        //        var httpRequestMessage = new HttpRequestMessage()
+        //        {
+        //            Method = HttpMethod.Delete,
+        //            RequestUri = new Uri($"https://localhost:7083/api/User/DeleteUser/Delete/{id}?ID={id}"),
+        //            Content = new StringContent(JsonSerializer.Serialize(delete), Encoding.UTF8, "application/json"),
+        //        };
+        //        var httpResponseMessage = await client.DeleteAsync(httpRequestMessage);
+
+        //        if (httpResponseMessage.IsSuccessStatusCode)
+        //        {
+        //            var response = await httpResponseMessage.Content.ReadFromJsonAsync<UpdateUserDto>();
+        //            if (response != null)
+        //            {
+        //                return RedirectToAction("GetAllUser", "User");
+        //            }
+        //        }
+        //        else if (httpResponseMessage.StatusCode == HttpStatusCode.Forbidden)
+        //        {
+        //            ViewBag.Error = "Incorrect User Password";
+        //        }
+        //        else
+        //        {
+        //            ViewBag.Error = "An error occurred while updating the user.";
+        //        }
+
+        //        return View();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        ViewBag.Error = "An error occurred: " + ex.Message;
+        //        return View();
+        //    }
+        //}
+
+
+
+
+
+
+
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> DeleteUser(Guid id, GetUserDto delete)
+        //{
+        //    try
+        //    {
+        //        var client = _httpClientFactory.CreateClient();
+        //        var httpResponseMessage = await client.DeleteAsync($"https://localhost:7083/api/User/DeleteUser/Delete/{id}?ID={id}");
+        //        httpResponseMessage.EnsureSuccessStatusCode();
+        //        return RedirectToAction("GetAllUser", "User");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //    return View("GetAllUser");
+        //}
 
     }
 }
