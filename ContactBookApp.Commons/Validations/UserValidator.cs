@@ -45,15 +45,15 @@ namespace ContactBookApp.Commons.Validations
             return IdentityResult.Success;
         }
 
-        public async Task<IdentityResult> ValidateUserAsync(Contact user)
-        {
-            var emailExists = await _userManager.FindByEmailAsync(user.Email);
-            if (emailExists != null)
-            {
-                return IdentityResult.Failed(new IdentityError { Code = "DuplicateEmail", Description = "Email already exists" });
-            }
-            return IdentityResult.Success;
-        }
+        //public async Task<IdentityResult> ValidateUserAsync(Contact user)
+        //{
+        //    var emailExists = await _userManager.FindByEmailAsync(user.Email);
+        //    if (emailExists != null)
+        //    {
+        //        return IdentityResult.Failed(new IdentityError { Code = "DuplicateEmail", Description = "Email already exists" });
+        //    }
+        //    return IdentityResult.Success;
+        //}
 
         public async Task<IdentityResult> ValidateUserAsync(User user)
         {
