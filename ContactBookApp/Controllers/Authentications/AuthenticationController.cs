@@ -39,16 +39,16 @@ namespace ContactBookApp.Authentications
             }
         }
 
-        [HttpPost("Register-Admin")]
-        public async Task<IActionResult> CreateAdmin([FromBody] RegisterViewModel model)
-        {
-            var result = await _authenticationService.RegisterAsync(model, "Admin", ModelState);
-            if (result != null) 
-            { 
-                return Ok(result);
-            }
-            else { return BadRequest(new { Message = "Failed to create admin user" }); }
-        }
+        //[HttpPost("Register-Admin")]
+        //public async Task<IActionResult> CreateAdmin([FromBody] RegisterViewModel model)
+        //{
+        //    var result = await _authenticationService.RegisterAsync(model, "Admin", ModelState);
+        //    if (result != null) 
+        //    { 
+        //        return Ok(result);
+        //    }
+        //    else { return BadRequest(new { Message = "Failed to create admin user" }); }
+        //}
 
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestViewModel model)
