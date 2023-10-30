@@ -25,5 +25,7 @@ namespace ContactBookApp.UI.Models.UserDTO
         [Compare(nameof(Password))]
         [DisplayName("Confirm Password")]
         public string ConfirmPassword { get; set; }
+        [DisplayName("Upload Image")]
+        public IFormFile UserImage { get; set; }
     }
 }

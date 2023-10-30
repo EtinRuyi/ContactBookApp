@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ContactBookApp.UI.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\wwwroot\\Images\\Ify.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Ify.jpeg"
+    },
+    {
       "Id": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

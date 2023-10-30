@@ -20,3 +20,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.standard-image {
+    width: 800px; 
+    height: 600px; 
+}
+
+/* Add this CSS to your stylesheet */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Adjust the z-index value as needed */
+    background-color: #fff; /* You can customize the background color */
+}
+

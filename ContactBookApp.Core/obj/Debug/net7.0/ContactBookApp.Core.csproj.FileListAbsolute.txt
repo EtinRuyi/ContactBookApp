@@ -1,8 +1,3 @@
-C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.csproj.AssemblyReference.cache
-C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.AssemblyInfoInputs.cache
-C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.AssemblyInfo.cs
-C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.csproj.CoreCompileInputs.cache
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\ContactBookApp.Core.deps.json
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\ContactBookApp.Core.runtimeconfig.json
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\ContactBookApp.Core.dll
@@ -13,6 +8,11 @@ C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\Conta
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\ContactBookApp.Commons.pdb
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\ContactBookApp.Data.pdb
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\bin\Debug\net7.0\ContactBookApp.Model.pdb
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.csproj.AssemblyReference.cache
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.AssemblyInfoInputs.cache
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.AssemblyInfo.cs
+C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.csproj.CoreCompileInputs.cache
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.csproj.CopyComplete
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\ContactBookApp.Core.dll
 C:\Users\omoru\Desktop\ContactBookApp\ContactBookApp.Core\obj\Debug\net7.0\refint\ContactBookApp.Core.dll

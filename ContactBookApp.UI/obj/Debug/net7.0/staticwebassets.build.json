@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i1FYIqug3D8dnoQeV6luaPaD4ksGV4QUpT/3E81+oFs=",
+  "Hash": "FvozgxeaNUQvTJtB7+JSJtV08dnlK0Xk7iCioZPD358=",
   "Source": "ContactBookApp.UI",
   "BasePath": "_content/ContactBookApp.UI",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\wwwroot\\Images\\Ify.jpeg",
+      "SourceId": "ContactBookApp.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\wwwroot\\",
+      "BasePath": "_content/ContactBookApp.UI",
+      "RelativePath": "Images/Ify.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Ify.jpeg"
     },
     {
       "Identity": "C:\\Users\\omoru\\Desktop\\ContactBookApp\\ContactBookApp.UI\\wwwroot\\js\\site.js",
