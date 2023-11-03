@@ -375,6 +375,7 @@ namespace ContactBookApp.UI.Controllers.User
 
         public async Task<IActionResult> SearchUsers()
         {
+            //Impplementing the search method for consumption
             return View();
         }
 
